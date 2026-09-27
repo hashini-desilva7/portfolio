@@ -1,0 +1,16 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local-only files
+.env
+*.local
+
+# NOTE: assets/cv.pdf is intentionally NOT ignored — the "Download CV"
+# button links to it, so the PDF must be deployed with the site.
