@@ -1,45 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hashini Vihanga — Cyber Security Undergraduate | Digital Forensics</title>
-<meta name="description" content="Portfolio of Hashini Vihanga — BSc (Hons) Cyber Security undergraduate specialising in digital forensics, penetration testing, Linux administration and secure web development.">
+<title>Hashini Vihanga // Digital Forensics &amp; Penetration Testing</title>
+<meta name="description" content="Hashini Vihanga — BSc (Hons) Cyber Security undergraduate at APIIT. Digital forensics, penetration testing, Linux security and secure web development. Portfolio, write-ups and TryHackMe profile.">
 <meta name="author" content="Hashini Vihanga">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#060a0e">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hashini Vihanga — Cyber Security Portfolio">
+<meta property="og:title" content="Hashini Vihanga // Cyber Security">
 <meta property="og:description" content="Digital forensics, penetration testing and Linux security. BSc (Hons) Cyber Security, APIIT.">
+<meta property="og:image" content="assets/img/cover-vulnhub.svg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
+<div class="fx-grid" aria-hidden="true"></div>
+<div class="fx-scan" aria-hidden="true"></div>
+<div class="fx-vignette" aria-hidden="true"></div>
+
+<!-- ================================================== HEADER -->
 <header class="site-header" id="top">
   <div class="wrap header-inner">
     <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true">HV</span>
-      <span class="brand-text">Hashini Vihanga</span>
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M7 11V7a5 5 0 0 1 10 0v4"/><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M12 15v2"/></svg>
+      </span>
+      <span class="brand-text">hashini<span class="brand-dim">.vihanga</span></span>
     </a>
 
     <nav class="nav" id="nav" aria-label="Primary">
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about"><span class="nav-idx">01</span>About</a></li>
+        <li><a href="#skills"><span class="nav-idx">02</span>Skills</a></li>
+        <li><a href="#work"><span class="nav-idx">03</span>Work</a></li>
+        <li><a href="#repos"><span class="nav-idx">04</span>Repos</a></li>
+        <li><a href="#ctf"><span class="nav-idx">05</span>CTF</a></li>
+        <li><a href="#education"><span class="nav-idx">06</span>Education</a></li>
+        <li><a href="#contact"><span class="nav-idx">07</span>Contact</a></li>
       </ul>
     </nav>
 
     <div class="header-actions">
-      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+      <span class="hdr-clock" id="hdr-clock" aria-hidden="true">--:--:--</span>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
         <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
       </button>
@@ -50,297 +63,523 @@
   </div>
 </header>
 
+<!-- terminal boot bar -->
+<div class="bootbar" aria-hidden="true"><i></i></div>
+
 <main id="main">
 
-  <!-- ============ HERO ============ -->
+  <!-- ================================================== HERO -->
   <section class="hero">
+    <canvas class="hero-canvas" id="matrix" aria-hidden="true"></canvas>
+
     <div class="wrap hero-inner">
       <div class="hero-text">
-        <p class="eyebrow reveal">BSc (Hons) Cyber Security · APIIT</p>
-        <h1 class="reveal">Hashini<br><span class="grad">Vihanga</span></h1>
+        <p class="crumb"><span class="prompt">root@hashini</span>:<span class="path">~</span>$ whoami</p>
+
+        <h1 class="glitch reveal" data-text="HASHINI VIHANGA">HASHINI VIHANGA</h1>
+
         <p class="hero-roles reveal">
-          Digital Forensics <span>·</span> Penetration Testing <span>·</span> Linux Security
+          <span class="caret" aria-hidden="true">▸</span>
+          <span id="typed" class="typed"></span><span class="blink" aria-hidden="true">█</span>
         </p>
+
         <p class="lede reveal">
-          Motivated second-year undergraduate with practical experience in <strong>digital forensics</strong>,
-          penetration testing, Linux administration and secure web development. I investigate digital
-          evidence with <strong>Autopsy</strong>, analyse network traffic with <strong>Wireshark</strong>,
-          and write tooling in Python and C#.
+          Second-year <strong>BSc (Hons) Cyber Security</strong> undergraduate at APIIT. I recover and
+          analyse digital evidence with <strong>Autopsy</strong>, dissect network traffic with
+          <strong>Wireshark</strong>, and script the boring parts away in <strong>Python</strong>.
+          Currently enumerating, exploiting and escalating my way through VulnHub.
         </p>
+
         <div class="hero-actions reveal">
-          <a class="btn btn-primary" href="assets/cv.pdf" download>
+          <a class="btn btn-primary" href="#repos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg>
+            Browse the repos
+          </a>
+          <a class="btn btn-ghost" href="https://tryhackme.com/p/hashinivihanga093" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.9 8 10 4.6-1.1 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+            TryHackMe
+          </a>
+          <a class="btn btn-ghost" href="assets/cv.pdf" download>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16"/></svg>
             Download CV
           </a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
-          <a class="btn btn-ghost" href="https://github.com/hashini-desilva7" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.3-4.3-2.2-6-2.7m12 5.2v-3.4c0-.9.1-1.3-.5-1.8 3-.3 6.1-1.5 6.1-6.6a5 5 0 0 0-1.4-3.5 4.7 4.7 0 0 0-.1-3.5s-1.1-.4-3.7 1.4a12.6 12.6 0 0 0-6.6 0C6 2.3 4.9 2.7 4.9 2.7a4.7 4.7 0 0 0-.1 3.5A5 5 0 0 0 3.4 9.7c0 5.1 3.1 6.3 6 6.6-.5.5-.6 1-.6 2v3.4"/></svg>
-            GitHub
-          </a>
         </div>
+
         <p class="hero-meta reveal">
-          Panadura, Sri Lanka &nbsp;·&nbsp;
-          <a href="tel:+94770846431">+94 77 084 6431</a> &nbsp;·&nbsp;
+          Panadura, Sri Lanka <span class="sep">//</span>
+          <a href="tel:+94770846431">+94 77 084 6431</a> <span class="sep">//</span>
           <a href="mailto:hashinivihanga093@gmail.com">hashinivihanga093@gmail.com</a>
         </p>
       </div>
 
-      <aside class="hero-card reveal" aria-label="Quick facts">
-        <div class="stat">
-          <span class="stat-num" data-count="10" data-suffix="+">0</span>
-          <span class="stat-label">VulnHub machines solved</span>
+      <!-- live identity card -->
+      <aside class="idcard reveal" aria-label="Profile summary">
+        <div class="idcard-glow" aria-hidden="true"></div>
+
+        <div class="idcard-top">
+          <div class="avatar-ring">
+            <img src="assets/img/avatar.jpg" width="400" height="400"
+                 alt="Photograph of Hashini Vihanga" loading="eager" decoding="async">
+            <span class="avatar-ping" aria-hidden="true"></span>
+          </div>
+          <div>
+            <p class="idcard-name">Hashini Vihanga</p>
+            <p class="idcard-role">Cyber Security Undergraduate</p>
+            <p class="idcard-org">APIIT · Staffordshire University</p>
+          </div>
         </div>
-        <div class="stat">
-          <span class="stat-num" data-count="6" data-suffix="">0</span>
-          <span class="stat-label">Music theory &amp; practical grades</span>
+
+        <dl class="idcard-stats">
+          <div><dt>Repos</dt><dd data-gh-stat="repos">6</dd></div>
+          <div><dt>Write-ups</dt><dd>10</dd></div>
+          <div><dt>CTF machines</dt><dd>10+</dd></div>
+        </dl>
+
+        <div class="idcard-bar">
+          <div class="idcard-bar-row">
+            <span>forensics / pen-test / linux</span>
+            <span class="idcard-bar-pct">active</span>
+          </div>
+          <div class="meter"><i style="--w:78%"></i></div>
         </div>
-        <div class="stat">
-          <span class="stat-num" data-count="2024" data-plain="true">0</span>
-          <span class="stat-label">Started cyber security degree</span>
-        </div>
+
         <ul class="tag-row">
-          <li>Autopsy</li><li>Wireshark</li><li>Burp Suite</li><li>Metasploit</li><li>Kali Linux</li>
+          <li>Autopsy</li><li>Wireshark</li><li>Burp Suite</li><li>Metasploit</li><li>Kali</li><li>Python</li>
         </ul>
       </aside>
     </div>
+
+    <a class="scroll-hint" href="#about" aria-label="Scroll to about">
+      <span class="scroll-mouse" aria-hidden="true"><i></i></span>
+      <span>scroll</span>
+    </a>
   </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="section" id="about">
+  <!-- ================================================== IDENTITY / LINKS -->
+  <section class="section" id="profiles">
     <div class="wrap">
-      <h2 class="section-title reveal">About</h2>
+      <h2 class="section-title reveal"><span class="title-idx">01</span>Profiles</h2>
+      <p class="section-sub reveal">Three places to follow the work — each one links out.</p>
+
+      <div class="profile-grid">
+
+        <!-- GitHub -->
+        <a class="profile-card reveal gh" href="https://github.com/hashini-desilva7" target="_blank" rel="noopener">
+          <div class="pc-glow" aria-hidden="true"></div>
+          <div class="pc-head">
+            <span class="pc-logo" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 19c-4.3 1.3-4.3-2.2-6-2.7m12 5.2v-3.4c0-.9.1-1.3-.5-1.8 3-.3 6.1-1.5 6.1-6.6a5 5 0 0 0-1.4-3.5 4.7 4.7 0 0 0-.1-3.5s-1.1-.4-3.7 1.4a12.6 12.6 0 0 0-6.6 0C6 2.3 4.9 2.7 4.9 2.7a4.7 4.7 0 0 0-.1 3.5A5 5 0 0 0 3.4 9.7c0 5.1 3.1 6.3 6 6.6-.5.5-.6 1-.6 2v3.4"/></svg>
+            </span>
+            <span class="pc-handle">@hashini-desilva7</span>
+            <span class="pc-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+          <p class="pc-desc">Cybersecurity Undergraduate @ APIIT. Code, write-ups and CTF notes — all public.</p>
+          <ul class="pc-stats">
+            <li><b data-gh-stat="repos">6</b><span>repositories</span></li>
+            <li><b data-gh-stat="followers">0</b><span>followers</span></li>
+            <li><b data-gh-stat="following">0</b><span>following</span></li>
+          </ul>
+          <span class="pc-live" data-gh-state="idle">offline snapshot</span>
+        </a>
+
+        <!-- TryHackMe -->
+        <a class="profile-card reveal thm" href="https://tryhackme.com/p/hashinivihanga093" target="_blank" rel="noopener">
+          <div class="pc-glow" aria-hidden="true"></div>
+          <div class="pc-head">
+            <img class="pc-avatar" src="assets/img/tryhackme-avatar.png" width="400" height="400"
+                 alt="TryHackMe profile picture for hashinivihanga093" loading="lazy" decoding="async">
+            <span class="pc-handle">hashinivihanga093</span>
+            <span class="pc-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+          <p class="pc-desc">Hands-on rooms and machines — enumeration, exploitation, privilege escalation and web app abuse.</p>
+          <ul class="pc-chips">
+            <li>Burp Suite</li><li>DVWA</li><li>Metasploit</li><li>Hydra</li><li>Nmap</li><li>wfuzz</li>
+          </ul>
+          <span class="pc-live thm-live">tryhackme ↗</span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="profile-card reveal li" href="https://tinyurl.com/hashini-de-silva" target="_blank" rel="noopener">
+          <div class="pc-glow" aria-hidden="true"></div>
+          <div class="pc-head">
+            <span class="pc-logo" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05a4.2 4.2 0 0 1 3.75-2.05c4 0 4.75 2.6 4.75 6V21h-4v-5.6c0-1.35-.03-3.1-1.9-3.1-1.9 0-2.2 1.45-2.2 3V21h-4V9Z"/></svg>
+            </span>
+            <span class="pc-handle">in/hashini-de-silva</span>
+            <span class="pc-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+          <p class="pc-desc">Professional profile, education history and the formal record — connect if you're hiring or recruiting.</p>
+          <ul class="pc-chips">
+            <li>Cyber Security</li><li>APIIT</li><li>Digital Forensics</li>
+          </ul>
+          <span class="pc-live">linkedin ↗</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== ABOUT -->
+  <section class="section section-alt" id="about">
+    <div class="wrap">
+      <h2 class="section-title reveal"><span class="title-idx">02</span>About</h2>
+
       <div class="about-grid">
         <div class="reveal">
           <p>
-            I'm a second-year BSc (Hons) Cyber Security student at APIIT, awarded by Staffordshire University,
-            with a focus on ethical hacking, digital forensics and software development. My work is
-            hands-on: recovering and analysing digital evidence, running enumeration and privilege-escalation
-            chains against practice machines, and scripting the repetitive parts away in Python.
+            I'm a second-year Cyber Security undergraduate focused on the investigative side of the field —
+            digital forensics, incident analysis, and understanding exactly how systems break. I learn by
+            doing: CTFs, labs and projects I can point to, rather than theory alone.
           </p>
           <p>
-            I'm looking for a <strong>graduate or junior Digital Forensic Examiner</strong> role where I can
-            turn lab experience into real case work — and keep building the kind of careful, documented
-            habits that forensic work demands.
+            My day-to-day is hands-on. Carving files out of disk images, reading registry hives, walking
+            packet captures frame by frame, and documenting what I find in a way another examiner could
+            follow. Write-ups are how I make sure I actually understood something.
+          </p>
+          <p class="about-goal">
+            <span class="prompt">target</span> — a graduate or junior
+            <strong>Digital Forensic Examiner</strong> role, where careful documentation and repeatable
+            process matter as much as the technical result.
           </p>
         </div>
+
         <ul class="about-facts reveal">
           <li><span>Location</span><strong>Panadura, Sri Lanka</strong></li>
-          <li><span>Availability</span><strong>Graduate / junior forensic roles</strong></li>
           <li><span>Languages</span><strong>English (professional) · Sinhala (native)</strong></li>
-          <li><span>Beyond cyber</span><strong>Rotaract volunteer · IRONMAN 70.3 volunteer · LCM music</strong></li>
+          <li><span>Focus</span><strong>Ethical hacking · Digital forensics · Software development</strong></li>
+          <li><span>Beyond cyber</span><strong>Rotaract volunteer · IRONMAN 70.3 volunteer · LCM music grades</strong></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ============ SKILLS ============ -->
-  <section class="section section-alt" id="skills">
+  <!-- ================================================== SKILLS -->
+  <section class="section" id="skills">
     <div class="wrap">
-      <h2 class="section-title reveal">Technical skills</h2>
-      <div class="skill-groups">
+      <h2 class="section-title reveal"><span class="title-idx">03</span>Arsenal</h2>
+      <p class="section-sub reveal">Tools and languages, grouped the way I actually reach for them.</p>
 
+      <div class="skill-groups" id="skill-groups">
         <article class="skill-card reveal">
-          <h3><span class="skill-ico" aria-hidden="true">&#9673;</span> Digital Forensics</h3>
-          <ul class="chips">
-            <li>Autopsy</li><li>EnCase</li><li>Wireshark</li><li>Registry Explorer</li>
-          </ul>
-          <p>Investigating digital evidence and recovered files; network traffic and protocol analysis.</p>
+          <h3><span class="skill-ico" aria-hidden="true">01</span> Digital Forensics</h3>
+          <ul class="chips"><li>Autopsy</li><li>EnCase</li><li>Wireshark</li><li>Registry Explorer</li></ul>
+          <p>Examining disk images, carving recovered files, walking registry hives and network captures.</p>
         </article>
-
         <article class="skill-card reveal">
-          <h3><span class="skill-ico" aria-hidden="true">&#9678;</span> Steganography</h3>
-          <ul class="chips">
-            <li>Steghide</li><li>exiftool</li><li>HxD</li><li>Binwalk</li>
-          </ul>
-          <p>Hiding and extracting data, metadata inspection and carving embedded files.</p>
+          <h3><span class="skill-ico" aria-hidden="true">02</span> Steganography</h3>
+          <ul class="chips"><li>Steghide</li><li>exiftool</li><li>HxD</li><li>Binwalk</li></ul>
+          <p>Extracting hidden payloads, stripping metadata, carving embedded files out of streams.</p>
         </article>
-
         <article class="skill-card reveal">
-          <h3><span class="skill-ico" aria-hidden="true">&#9670;</span> Web App Testing</h3>
-          <ul class="chips">
-            <li>OWASP Top 10</li><li>Burp Suite</li><li>wfuzz</li><li>Gobuster</li><li>Feroxbuster</li>
-          </ul>
-          <p>Assessing practice targets such as DVWA against the OWASP Top 10 categories.</p>
+          <h3><span class="skill-ico" aria-hidden="true">03</span> Web App Testing</h3>
+          <ul class="chips"><li>OWASP Top 10</li><li>Burp Suite</li><li>wfuzz</li><li>Gobuster</li><li>Feroxbuster</li></ul>
+          <p>Testing practice targets such as DVWA against each OWASP Top 10 category.</p>
         </article>
-
         <article class="skill-card reveal">
-          <h3><span class="skill-ico" aria-hidden="true">&#9671;</span> Networking &amp; Exploitation</h3>
-          <ul class="chips">
-            <li>Nmap</li><li>Metasploit</li><li>Hydra</li><li>Wireshark</li>
-          </ul>
-          <p>Enumeration, service fingerprinting and credential attacks in a lab context.</p>
+          <h3><span class="skill-ico" aria-hidden="true">04</span> Exploitation</h3>
+          <ul class="chips"><li>Nmap</li><li>Metasploit</li><li>Hydra</li><li>msfvenom</li><li>gobuster</li></ul>
+          <p>Enumeration, service fingerprinting, payload delivery and privilege escalation in the lab.</p>
         </article>
-
         <article class="skill-card reveal">
-          <h3><span class="skill-ico" aria-hidden="true">&#9672;</span> Operating Systems</h3>
-          <ul class="chips">
-            <li>Linux CLI</li><li>Kali Linux</li>
-          </ul>
-          <p>Command line for administration, networking and day-to-day security tasks.</p>
+          <h3><span class="skill-ico" aria-hidden="true">05</span> Operating Systems</h3>
+          <ul class="chips"><li>Linux CLI</li><li>Kali Linux</li><li>Windows</li></ul>
+          <p>Command line for administration, networking and day-to-day security work.</p>
         </article>
-
         <article class="skill-card reveal">
-          <h3><span class="skill-ico" aria-hidden="true">&#9675;</span> Programming &amp; Web</h3>
-          <ul class="chips">
-            <li>Python</li><li>C# / OOP</li><li>HTML</li><li>CSS</li>
-          </ul>
-          <p>Automation and problem solving in Python; OOP in C#; responsive front-end basics.</p>
+          <h3><span class="skill-ico" aria-hidden="true">06</span> Programming &amp; Web</h3>
+          <ul class="chips"><li>Python</li><li>C# / OOP</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <p>Automation and problem solving in Python, OOP in C#, and the front end to ship it.</p>
         </article>
-
       </div>
     </div>
   </section>
 
-  <!-- ============ WORK ============ -->
-  <section class="section" id="work">
+  <!-- ================================================== WORK / PROJECTS -->
+  <section class="section section-alt" id="work">
     <div class="wrap">
-      <h2 class="section-title reveal">Projects &amp; practical experience</h2>
+      <h2 class="section-title reveal"><span class="title-idx">04</span>Case Work</h2>
+      <p class="section-sub reveal">Labs, write-ups and shipped software. Every card links to the real artefact.</p>
+
       <div class="work-list">
 
         <article class="work reveal">
-          <div class="work-head">
-            <h3>Digital Forensics Labs</h3>
-            <span class="work-tools">Autopsy · Wireshark</span>
+          <a class="work-media" href="https://github.com/hashini-desilva7/Vulnhub" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/img/cover-vulnhub.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
+          </a>
+          <div class="work-body">
+            <div class="work-head">
+              <h3>VulnHub Write-ups</h3>
+              <span class="work-tools">Kali Linux · Burp Suite · Metasploit</span>
+            </div>
+            <ul class="bullets">
+              <li>Documented enumeration, exploitation, privilege escalation and post-exploitation across <strong>10 machines</strong> — DC series, Cybersploit, GoldenEye, Metasploitable 2.</li>
+              <li>Separate deep-dive on crafting a reverse shell with <strong>msfvenom</strong> payloads.</li>
+              <li>Every box ends in a documented flag and a re-runnable command sequence.</li>
+            </ul>
+            <a class="work-link" href="https://github.com/hashini-desilva7/Vulnhub" target="_blank" rel="noopener">
+              Read the write-ups <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
           </div>
-          <ul class="bullets">
-            <li>Investigated digital evidence and recovered files using Autopsy in academic lab exercises.</li>
-            <li>Analysed network traffic and protocols with Wireshark, documenting findings from captures.</li>
-          </ul>
         </article>
 
         <article class="work reveal">
-          <div class="work-head">
-            <h3>CTF Labs &amp; Write-ups</h3>
-            <span class="work-tools">Kali Linux · Burp Suite · Metasploit · DVWA</span>
+          <a class="work-media" href="https://github.com/hashini-desilva7/Hackstation.io" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/img/cover-hackstation.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
+          </a>
+          <div class="work-body">
+            <div class="work-head">
+              <h3>Hackstation.io — SQL Injection</h3>
+              <span class="work-tools">Burp Suite · SQLi · Lab</span>
+            </div>
+            <ul class="bullets">
+              <li>Full SQLi walkthrough: column counting, database enumeration, table and column extraction.</li>
+              <li>Pulled staff credentials and authenticated as administrator to capture the flag.</li>
+              <li>Compares <strong>UNION, boolean-blind, time-based blind and error-based</strong> techniques.</li>
+            </ul>
+            <a class="work-link" href="https://github.com/hashini-desilva7/Hackstation.io" target="_blank" rel="noopener">
+              Read the walkthrough <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
           </div>
-          <ul class="bullets">
-            <li>Conducted enumeration, exploitation and privilege escalation on 10+ VulnHub machines, including DC Series, SkyDog and GoldenEye.</li>
-            <li>Performed vulnerability assessments against practice targets such as DVWA.</li>
-            <li>Wrote up findings to track methodology and repeat the same steps faster next time.</li>
-          </ul>
         </article>
 
         <article class="work reveal">
-          <div class="work-head">
-            <h3>Library Management System</h3>
-            <span class="work-tools">C#</span>
+          <a class="work-media" href="https://github.com/hashini-desilva7/Library-Management-System" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/img/cover-library.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
+          </a>
+          <div class="work-body">
+            <div class="work-head">
+              <h3>Oaktown Library Management System</h3>
+              <span class="work-tools">C# · OOP · NUnit · SQL</span>
+            </div>
+            <ul class="bullets">
+              <li>Desktop application covering book, member, magazine and reference-title management with borrow/return tracking.</li>
+              <li>Modelled with an inheritance hierarchy — <code>LibraryItem</code> base class with <code>Book</code>, <code>Magazine</code> and <code>ReferenceBook</code> subtypes.</li>
+              <li>Unit tests alongside the domain logic, and CRUD persistence for search and records.</li>
+            </ul>
+            <a class="work-link" href="https://github.com/hashini-desilva7/Library-Management-System" target="_blank" rel="noopener">
+              View the source <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
           </div>
-          <ul class="bullets">
-            <li>Built a desktop library management application in C# using object-oriented design — cataloguing, search and loan tracking.</li>
-          </ul>
         </article>
 
         <article class="work reveal">
-          <div class="work-head">
-            <h3>Professional Portfolio Website</h3>
-            <span class="work-tools">HTML · CSS · JavaScript</span>
+          <a class="work-media" href="https://github.com/hashini-desilva7/GreenBite-Website" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/img/cover-greenbite.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
+          </a>
+          <div class="work-body">
+            <div class="work-head">
+              <h3>GreenBite — Wellness PWA</h3>
+              <span class="work-tools">HTML · CSS · JavaScript · Service Worker</span>
+            </div>
+            <ul class="bullets">
+              <li>Multi-page wellness site — recipes, guided workouts, equipment library, mindfulness and a contact flow.</li>
+              <li>Built as an installable <strong>progressive web app</strong> with a service worker and offline fallback page.</li>
+              <li>Responsive layout across every breakpoint, with a web app manifest for home-screen install.</li>
+            </ul>
+            <a class="work-link" href="https://github.com/hashini-desilva7/GreenBite-Website" target="_blank" rel="noopener">
+              View the source <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
           </div>
-          <ul class="bullets">
-            <li>Designed and built a responsive personal portfolio site with semantic HTML, custom CSS and vanilla JavaScript.</li>
-          </ul>
+        </article>
+
+        <article class="work reveal">
+          <a class="work-media" href="https://github.com/hashini-desilva7/portfolio" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/img/cover-portfolio.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
+          </a>
+          <div class="work-body">
+            <div class="work-head">
+              <h3>This Portfolio</h3>
+              <span class="work-tools">HTML · CSS · JavaScript</span>
+            </div>
+            <ul class="bullets">
+              <li>Static site on GitHub Pages — semantic HTML, custom-property theming, dark and light modes.</li>
+              <li>Live GitHub repo data pulled from the public API, with an offline snapshot fallback.</li>
+              <li>Canvas effects, typewriter intro and scan animations — all disabled under <code>prefers-reduced-motion</code>.</li>
+            </ul>
+            <a class="work-link" href="https://github.com/hashini-desilva7/portfolio" target="_blank" rel="noopener">
+              View the source <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
         </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ============ EDUCATION ============ -->
-  <section class="section section-alt" id="education">
+  <!-- ================================================== LIVE REPOS -->
+  <section class="section" id="repos">
     <div class="wrap">
-      <h2 class="section-title reveal">Education</h2>
-      <ol class="timeline">
+      <div class="repos-head">
+        <div>
+          <h2 class="section-title reveal"><span class="title-idx">05</span>Repositories</h2>
+          <p class="section-sub reveal">
+            Fetched live from the GitHub API. Stars and update dates are real, not hard-coded.
+          </p>
+        </div>
+        <a class="btn btn-ghost btn-sm reveal" href="https://github.com/hashini-desilva7?tab=repositories" target="_blank" rel="noopener">
+          All repos on GitHub <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
 
+      <div class="repo-bar reveal">
+        <div class="filters" role="tablist" aria-label="Filter repositories by category">
+          <button class="filter is-active" role="tab" aria-selected="true" data-filter="all">all</button>
+          <button class="filter" role="tab" aria-selected="false" data-filter="security">security</button>
+          <button class="filter" role="tab" aria-selected="false" data-filter="web">web</button>
+          <button class="filter" role="tab" aria-selected="false" data-filter="code">code</button>
+        </div>
+        <span class="repo-state" data-gh-state="idle">
+          <i class="dot"></i><span class="repo-state-text">cached snapshot</span>
+        </span>
+      </div>
+
+      <div class="repo-grid" id="repo-grid">
+        <noscript><p class="repo-note">Enable JavaScript to load repositories live from GitHub.</p></noscript>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== CTF / THM -->
+  <section class="section section-alt" id="ctf">
+    <div class="wrap">
+      <h2 class="section-title reveal"><span class="title-idx">06</span>CTF &amp; Labs</h2>
+      <p class="section-sub reveal">Machines walked end to end — scan, enumerate, exploit, escalate, document.</p>
+
+      <div class="ctf-grid">
+        <article class="ctf-card reveal">
+          <span class="ctf-tier">tier 01</span>
+          <h3>Offensive Security</h3>
+          <p>Dedicated enumeration, exploitation and privilege escalation against deliberately vulnerable Linux hosts.</p>
+          <ul class="ctf-list">
+            <li><b>DC series</b> — DC-1, DC-2, DC-4</li>
+            <li><b>GoldenEye</b> — EternalBlue + credential pivoting</li>
+            <li><b>Cybersploit 1 &amp; 2</b></li>
+            <li><b>Metasploitable 2</b> — multi-vector</li>
+          </ul>
+        </article>
+
+        <article class="ctf-card reveal">
+          <span class="ctf-tier">tier 02</span>
+          <h3>Web Application</h3>
+          <p>Injection-first testing against deliberately vulnerable web targets, covering the OWASP Top 10.</p>
+          <ul class="ctf-list">
+            <li><b>Hackstation.io</b> — full SQLi chain to admin</li>
+            <li><b>DVWA</b> — brute force, injection, file upload</li>
+            <li><b>UNION / boolean-blind / time-blind / error-based</b></li>
+            <li><b>wfuzz</b> — parameter and directory fuzzing</li>
+          </ul>
+        </article>
+
+        <article class="ctf-card reveal">
+          <span class="ctf-tier">tier 03</span>
+          <h3>Payload Crafting</h3>
+          <p>Building and delivering reverse shells, then working with encoded and obfuscated transfer.</p>
+          <ul class="ctf-list">
+            <li><b>msfvenom</b> — staged and stageless payloads</li>
+            <li><b>Encoders</b> — evading signature checks</li>
+            <li><b>Steghide / Binwalk</b> — extracting hidden data</li>
+            <li><b>Hydra</b> — controlled credential attacks</li>
+          </ul>
+        </article>
+      </div>
+
+      <a class="thm-cta reveal" href="https://tryhackme.com/p/hashinivihanga093" target="_blank" rel="noopener">
+        <img src="assets/img/tryhackme-avatar.png" width="400" height="400" alt="" loading="lazy" decoding="async">
+        <span>
+          <b>Follow the live lab progress on TryHackMe</b>
+          <i>hashinivihanga093 — rooms, machines and streaks</i>
+        </span>
+        <svg class="thm-cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================================================== EDUCATION -->
+  <section class="section" id="education">
+    <div class="wrap">
+      <h2 class="section-title reveal"><span class="title-idx">07</span>Education</h2>
+
+      <ol class="timeline">
         <li class="tl-item reveal">
           <span class="tl-dot" aria-hidden="true"></span>
           <div class="tl-body">
-            <div class="tl-head">
-              <h3>BSc (Hons) Cyber Security</h3>
-              <span class="tl-date">2024 — 2027</span>
-            </div>
+            <div class="tl-head"><h3>BSc (Hons) Cyber Security</h3><span class="tl-date">2024 — 2027</span></div>
             <p class="tl-org">Asia Pacific Institute of Information Technology (APIIT), awarded by Staffordshire University</p>
-            <p class="tl-note">Focus areas: Ethical Hacking, Digital Forensics, Software Development</p>
+            <p class="tl-note">Focus areas: Ethical Hacking · Digital Forensics · Software Development</p>
+            <ul class="chips tl-chips"><li>Year 2</li><li>APIIT</li><li>Staffordshire University</li></ul>
           </div>
         </li>
-
         <li class="tl-item reveal">
           <span class="tl-dot" aria-hidden="true"></span>
           <div class="tl-body">
-            <div class="tl-head">
-              <h3>Computing Foundation</h3>
-              <span class="tl-date">2024</span>
-            </div>
+            <div class="tl-head"><h3>Computing Foundation</h3><span class="tl-date">2024</span></div>
             <p class="tl-org">Asia Pacific Institute of Information Technology (APIIT), Sri Lanka</p>
           </div>
         </li>
-
         <li class="tl-item reveal">
           <span class="tl-dot" aria-hidden="true"></span>
           <div class="tl-body">
-            <div class="tl-head">
-              <h3>GCE Ordinary Level</h3>
-              <span class="tl-date">2023 (2024)</span>
-            </div>
+            <div class="tl-head"><h3>GCE Ordinary Level</h3><span class="tl-date">2023 (2024)</span></div>
           </div>
         </li>
-
       </ol>
-    </div>
-  </section>
 
-  <!-- ============ ACHIEVEMENTS ============ -->
-  <section class="section" id="achievements">
-    <div class="wrap">
-      <h2 class="section-title reveal">Achievements &amp; volunteering</h2>
       <div class="ach-grid">
-        <article class="ach reveal">
-          <h3>London College of Music</h3>
-          <p>Theory exams Grade 1–6 · Practical exams Grade 1–5</p>
-        </article>
-        <article class="ach reveal">
-          <h3>APIIT Rotaract Club</h3>
-          <p>Active volunteer in the club's community and events programme.</p>
-        </article>
-        <article class="ach reveal">
-          <h3>IRONMAN 70.3 Sri Lanka</h3>
-          <p>Volunteered on the ground at the event.</p>
-        </article>
-        <article class="ach reveal">
-          <h3>Continuous learner</h3>
-          <p>Ongoing cybersecurity labs, CTF challenges and TryHackMe rooms.</p>
-        </article>
+        <article class="ach reveal"><h3>London College of Music</h3><p>Theory exams Grade 1–6 · Practical exams Grade 1–5</p></article>
+        <article class="ach reveal"><h3>APIIT Rotaract Club</h3><p>Active volunteer in the club's community and events programme.</p></article>
+        <article class="ach reveal"><h3>IRONMAN 70.3 Sri Lanka</h3><p>Volunteered on the ground at the event.</p></article>
+        <article class="ach reveal"><h3>Continuous learner</h3><p>Ongoing labs, CTF challenges and TryHackMe rooms.</p></article>
       </div>
     </div>
   </section>
 
-  <!-- ============ CONTACT ============ -->
+  <!-- ================================================== CONTACT -->
   <section class="section section-alt" id="contact">
     <div class="wrap contact-inner">
-      <h2 class="section-title reveal">Get in touch</h2>
+      <h2 class="section-title reveal"><span class="title-idx">08</span>Establish Contact</h2>
       <p class="lede reveal">
-        Open to graduate and junior Digital Forensic Examiner roles. If you've got an investigation
-        problem, a lab, or just want to compare notes on a CTF — reach out.
+        Open to graduate and junior Digital Forensic Examiner roles. If you've got an investigation to run,
+        a lab to think through, or a CV to review — the inbox is open.
       </p>
+
+      <div class="terminal-card reveal">
+        <div class="tc-bar">
+          <span class="tc-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="tc-title">message — hashini</span>
+        </div>
+        <div class="tc-body">
+          <p><span class="prompt">$</span> <span class="cmd">./send.sh</span></p>
+          <p class="tc-out">Subject: Digital Forensic Examiner — graduate / junior role</p>
+          <p class="tc-out">Hi Hashini,</p>
+          <p class="tc-out">Your write-ups and forensics lab work caught our eye. Are you open to a chat?</p>
+          <p><span class="prompt">$</span> <span class="ok">ready.</span></p>
+        </div>
+      </div>
 
       <div class="contact-cards">
         <a class="contact-card reveal" href="mailto:hashinivihanga093@gmail.com">
-          <span class="c-label">Email</span>
-          <span class="c-value">hashinivihanga093@gmail.com</span>
+          <span class="c-label">Email</span><span class="c-value">hashinivihanga093@gmail.com</span>
         </a>
         <a class="contact-card reveal" href="tel:+94770846431">
-          <span class="c-label">Phone</span>
-          <span class="c-value">+94 77 084 6431</span>
-        </a>
-        <a class="contact-card reveal" href="https://tinyurl.com/hashini-de-silva" target="_blank" rel="noopener">
-          <span class="c-label">LinkedIn</span>
-          <span class="c-value">hashini-de-silva</span>
+          <span class="c-label">Phone</span><span class="c-value">+94 77 084 6431</span>
         </a>
         <a class="contact-card reveal" href="https://github.com/hashini-desilva7" target="_blank" rel="noopener">
-          <span class="c-label">GitHub</span>
-          <span class="c-value">/hashini-desilva7</span>
+          <span class="c-label">GitHub</span><span class="c-value">/hashini-desilva7</span>
         </a>
         <a class="contact-card reveal" href="https://tryhackme.com/p/hashinivihanga093" target="_blank" rel="noopener">
-          <span class="c-label">TryHackMe</span>
-          <span class="c-value">/p/hashinivihanga093</span>
+          <span class="c-label">TryHackMe</span><span class="c-value">/p/hashinivihanga093</span>
+        </a>
+        <a class="contact-card reveal" href="https://tinyurl.com/hashini-de-silva" target="_blank" rel="noopener">
+          <span class="c-label">LinkedIn</span><span class="c-value">hashini-de-silva</span>
+        </a>
+        <a class="contact-card reveal" href="assets/cv.pdf" download>
+          <span class="c-label">Résumé</span><span class="c-value">Download PDF</span>
         </a>
       </div>
     </div>
@@ -349,7 +588,7 @@
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <p>&copy; <span id="year">2026</span> Hashini Vihanga. Built with HTML, CSS &amp; vanilla JavaScript.</p>
+    <p>&copy; <span id="year">2026</span> Hashini Vihanga <span class="sep">//</span> built with HTML, CSS &amp; vanilla JavaScript</p>
     <a class="to-top" href="#top" aria-label="Back to top">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V5m0 0-6 6m6-6 6 6"/></svg>
     </a>
@@ -357,5 +596,6 @@
 </footer>
 
 <script src="js/main.js" defer></script>
+<script src="js/github.js" defer></script>
 </body>
 </html>
