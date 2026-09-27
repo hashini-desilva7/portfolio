@@ -612,6 +612,14 @@ body > *:not(.fx-grid):not(.fx-scan):not(.fx-vignette) { position: relative; z-i
 .work-link:hover { border-bottom-color: currentColor; }
 .work-link:hover svg { transform: translate(2px, -2px); }
 
+/* two actions on one card: primary "visit", secondary "source" */
+.work-actions {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 10px 22px;
+}
+.work-link-alt { color: var(--text-2); }
+.work-link-alt:hover { color: var(--grn); }
+
 /* ---------------------------------------------------- repos */
 .repos-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 18px; }
 .repos-head .section-sub { margin-bottom: 0; }
